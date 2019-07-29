@@ -226,7 +226,7 @@ If you need additional datatypes for your analyzer, please let us know at
 [support@thehive-project.org](mailto:support@thehive-project.org).
 
 #### baseConfig
-The `baseConfig` attribute provides a method of setting default configuration items. This is particularly useful for analyzers with more than one flavor. Service Interaction Files that share a `baseConfig` will share the same default configuration item values. For example, a user could specify an API key once and the value will be set for several related analyzers. Default values can be set in the "Analyzers" tab under "Configuration". Values can be overridden on a per-flavor basis. Analyzers that have already been configured are not automatically updated when default values are changed. 
+The `baseConfig` attribute provides a way to group one or more analyzers together. Service Interaction Files that share the same `baseConfig` value will share the same default configuration item values. This is particularly useful for analyzers with more than one flavor. For example, a user could specify their API key once and the value will already be set when they proceed to enable any other analyzer in the group. Default values can be set in the "Analyzers" tab under "Configuration". Values can be overridden on a per-flavor basis if needed. Analyzers that have already been configured are not automatically updated when default values are changed.
 
 #### config
 Configuration dedicated to the analyzer's flavor. These settings are not easily changed from the Cortex web interface. This is where we typically specify the TLP level of observables allowed to be analyzed with the
