@@ -226,9 +226,10 @@ If you need additional datatypes for your analyzer, please let us know at
 [support@thehive-project.org](mailto:support@thehive-project.org).
 
 #### baseConfig
-Name used to group configuration items common to several analyzer. This
-prevent the user to enter the same API key for all analyzer flavors.
-The Cortex analyzer config page group configuration items by their `baseConfig`.  
+The baseConfig object provides a way to set configuration items that apply to multiple analyzers.
+This is particularly useful for analyzers with more than one flavor. As an example, a user could specify an API key once and make the value available to several related analyzers. Once a `baseConfig` item is defined, its value can be set in the config tab of the Cortex analyzer config page. `baseConfig` items can be overridden on a per-flavor basis.
+
+**Note**: The baseConfig object must have the same contents for all Service Interaction File for a particular analyzer. 
 
 #### config
 Configuration dedicated to the analyzer's flavor. This is where we
