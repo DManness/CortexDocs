@@ -226,14 +226,10 @@ If you need additional datatypes for your analyzer, please let us know at
 [support@thehive-project.org](mailto:support@thehive-project.org).
 
 #### baseConfig
-The baseConfig object provides a way to set configuration items that apply to multiple analyzers.
-This is particularly useful for analyzers with more than one flavor. As an example, a user could specify an API key once and make the value available to several related analyzers. Once a `baseConfig` item is defined, its value can be set in the config tab of the Cortex analyzer config page. `baseConfig` items can be overridden on a per-flavor basis.
-
-**Note**: The baseConfig object must have the same contents for all Service Interaction File for a particular analyzer. 
+The `baseConfig` attribute provides a method of setting default configuration items. This is particularly useful for analyzers with more than one flavor. Service Interaction Files that share a `baseConfig` will share the same default configuration item values. For example, a user could specify an API key once and the value will be set for several related analyzers. Default values can be set in the "Analyzers" tab under "Configuration". Values can be overridden on a per-flavor basis. Analyzers that have already been configured are not automatically updated when default values are changed. 
 
 #### config
-Configuration dedicated to the analyzer's flavor. This is where we
- typically specify the TLP level of observables allowed to be analyzed with the
+Configuration dedicated to the analyzer's flavor. These settings are not easily changed from the Cortex web interface. This is where we typically specify the TLP level of observables allowed to be analyzed with the
  `check_tlp` and `max_tlp` parameters. For example, if `max_tlp` is set to `2` (TLP:AMBER),
  TLP:RED observables cannot be analyzed.
 
@@ -283,7 +279,7 @@ path to the main program file.
 The list of configurationItems is necessary in order to be able to set all configuration variables for analyzers directly in the Cortex 2 user interface. As in the VirusTotal example above can be seen, every item is a json object that defines:
 - name (string)
 - description (string)
-- type (string)
+- type (string) - Possible values are 'number'
 - multi (boolean)
 - required (boolean)
 - defaultValue (according to type, optional)
